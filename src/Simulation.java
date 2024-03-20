@@ -23,9 +23,9 @@ public class Simulation {
             } else {
                 simulateWhenNodeIsNotEmpty(randomX, randomY);
             }
-            System.out.printf("iterateIdx: %d\n", iterateIdx);
-            System.out.printf("isStepDone: %b\n", isStepDone);
-            System.out.printf("%b\n", !isStepDone && iterateIdx < 1000000);
+//            System.out.printf("iterateIdx: %d\n", iterateIdx);
+//            System.out.printf("isStepDone: %b\n", isStepDone);
+//            System.out.printf("%b\n", !isStepDone && iterateIdx < 1000000);
         }
         iterateIdx = 0;
         isStepDone = false;
