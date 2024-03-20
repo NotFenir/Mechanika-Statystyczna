@@ -31,8 +31,11 @@ public class SimulationPanel extends JPanel {
     private void PaintSimulationPanel(Graphics graph) {
         for (int i = 0; i < lattice.getSize(); i++) {
             for (int j = 0; j < lattice.getSize(); j++) {
-                if (lattice.getNodeOnPosition(i,j) != null) {
-                    graph.setColor(Color.red);
+                Node node = lattice.getNodeOnPosition(i,j);
+                if (node != null) {
+                    float survivability = (float) node.getSurvivability();
+                    Color gradientColor = new Color(survivability, survivability, survivability);
+                    graph.setColor(gradientColor);
                 } else {
                     graph.setColor(Color.black);
                 }

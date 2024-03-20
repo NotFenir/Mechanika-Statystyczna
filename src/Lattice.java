@@ -37,9 +37,12 @@ public class Lattice {
     public void putInitialNodesOnLeftAndRightSides() {
         double survivability = Constants.getInitialNodesSurvivability();
         for (int i = 0; i < size; i++) {
-            if (Constants.getIsRandomInitialNodesSurvivability()) {
-                survivability = Math.random();
-            }
+            do {
+                if (Constants.getIsRandomInitialNodesSurvivability()) {
+                    survivability = Math.random();
+                }
+            } while (survivability < Constants.getMinInitialNodesSurvivability() ||
+                    survivability > Constants.getMaxInitialNodesSurvivability());
 
             lattice[0][i] = new Node( 0, i, survivability);
             lattice[1][i] = new Node( 1, i, survivability);

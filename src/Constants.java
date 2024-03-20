@@ -4,14 +4,16 @@ public class Constants {
     private static final int windowHeight = 300;
 
     private static final boolean isRandomInitialNodesSurvivability = true;
+    private static final double maxInitialNodesSurvivability = .88;
+    private static final double minInitialNodesSurvivability = 0;
     private static final double initialNodesSurvivability = .5;
 
 
     // --------- Antibiotic Concentration Options --------
     private static final boolean isAntibioticConcentrationAvailable = true;
     private static final double minRangeOfConcentration = 1;
-    private static final double maxRangeOfConcentration = 6;
-    private static final int numberOfConcentrationSteps = 10;
+    private static final double maxRangeOfConcentration = 7;
+    private static final int numberOfConcentrationSteps =8;
 
     // --------- Mutability after inheritance -----------
     private static final boolean isMutationOfSurvivabilityAfterInheritanceAvailable = true;
@@ -20,6 +22,8 @@ public class Constants {
 
 
     // --------- Getters ----------
+    public static double getMaxInitialNodesSurvivability() { return maxInitialNodesSurvivability; }
+    public static double getMinInitialNodesSurvivability() { return minInitialNodesSurvivability; }
 
     public static double getInitialNodesSurvivability() {
         return initialNodesSurvivability;

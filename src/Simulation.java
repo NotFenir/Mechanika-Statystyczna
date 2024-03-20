@@ -3,6 +3,7 @@ import java.util.List;
 public class Simulation {
     private final Lattice lattice;
     private boolean isStepDone = false;
+    private int iterateIdx = 0;
 
     public Simulation() {
         lattice = new Lattice(Constants.getLatticeSize());
@@ -10,17 +11,23 @@ public class Simulation {
     }
 
     public void Do() {
-        while (!isStepDone) {
+        while (!isStepDone && iterateIdx < 1000000) {
             int randomX = (int) (Math.random() * lattice.getSize());
             int randomY = (int) (Math.random() * lattice.getSize());
 //        System.out.println("x: "+randomX+"\ty: "+randomY);
+
+
 
             if (lattice.getNodeOnPosition(randomX, randomY) == null) {
                 simulateWhenNodeIsEmpty(randomX, randomY);
             } else {
                 simulateWhenNodeIsNotEmpty(randomX, randomY);
             }
+            System.out.printf("iterateIdx: %d\n", iterateIdx);
+            System.out.printf("isStepDone: %b\n", isStepDone);
+            System.out.printf("%b\n", !isStepDone && iterateIdx < 1000000);
         }
+        iterateIdx = 0;
         isStepDone = false;
     }
 
@@ -44,6 +51,7 @@ public class Simulation {
             lattice.destroyNodeOnPosition(x, y);
 //            System.out.println("Destroy with concentration: " + concentration);
             isStepDone = true;
+            iterateIdx++;
         }
     }
 
@@ -63,6 +71,7 @@ public class Simulation {
 
         lattice.setNodeOnPosition(randomX, randomY, newNodeSurvivability);
         isStepDone = true;
+        iterateIdx++;
     }
 
     private static double getNewNodeSurvivability(Node adjacentNode) {
