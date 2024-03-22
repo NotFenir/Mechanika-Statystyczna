@@ -36,27 +36,16 @@ public class AnotherSimulationVersion {
 //        System.out.println("Created on " + randomX + " " + randomY);
 
         Node adjacentNode = Lattice.chooseRandomNode(adjacentNodes);
-        newNodeSurvivability = getNewNodeSurvivability(adjacentNode, randomX, randomY);
+        newNodeSurvivability = getNewNodeSurvivability(adjacentNode);
 
         lattice.trySetNodeOnPosition(randomX, randomY, newNodeSurvivability);
         isStepDone = true;
         iterateIdx++;
     }
 
-    private double getNewNodeSurvivability(Node adjacentNode, int randomX, int randomY) {
+    private double getNewNodeSurvivability(Node adjacentNode) {
         double newNodeSurvivability;
-
         newNodeSurvivability= getAdjacentNodeSurvivability(adjacentNode);
-        newNodeSurvivability = getSurvivabilityInAntibioticConcentration(newNodeSurvivability, randomX, randomY);
-
-        return newNodeSurvivability;
-    }
-
-    private double getSurvivabilityInAntibioticConcentration(double newNodeSurvivability, int randomX, int randomY) {
-        if (Constants.getIsAntibioticConcentrationAvailable()) {
-            double concentration = lattice.getAntibioticConcentrationOnPosition(randomX, randomY);
-            newNodeSurvivability *= Math.exp(-(1 - newNodeSurvivability) * concentration);
-        }
 
         return newNodeSurvivability;
     }

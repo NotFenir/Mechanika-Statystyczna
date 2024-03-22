@@ -2,10 +2,10 @@ public class Constants {
     private static final int latticeSize = 150;
     private static final int windowWidth = 300;
     private static final int windowHeight = 300;
-    private static final boolean isAnotherAnotherSimulationWithHardToCreateBakteria = false;
+    private static final boolean isAnotherAnotherSimulationWithHardToCreateBacteria = false;
 
     private static final boolean isRandomInitialNodesSurvivability = true;
-    private static final double maxInitialNodesSurvivability = .88;
+    private static final double maxInitialNodesSurvivability = .6;
     private static final double minInitialNodesSurvivability = 0;
     private static final double initialNodesSurvivability = .5;
 
@@ -13,19 +13,19 @@ public class Constants {
     // --------- Antibiotic Concentration Options --------
     private static final boolean isAntibioticConcentrationAvailable = true;
     private static final double minRangeOfConcentration = 1;
-    private static final double maxRangeOfConcentration = 7;
-    private static final int numberOfConcentrationSteps = 8;
+    private static final double maxRangeOfConcentration = 15;
+    private static final int numberOfConcentrationSteps = 20;
 
     // --------- Mutability after inheritance -----------
     private static final boolean isMutationOfSurvivabilityAfterInheritanceAvailable = true;
-    private static final double mutabilityRate = 0.01;
+    private static final double mutabilityRate = 0.003;
     private static final double minimumOffsetOfMutability = 0;
 
     // --------- Dead ----------
     private static final boolean isDeadNodeAvailable = false;
 
     // --------- Getters ----------
-    public static boolean getIsAnotherAnotherSimulationWithHardToCreateBakteria() { return isAnotherAnotherSimulationWithHardToCreateBakteria; }
+    public static boolean getIsAnotherAnotherSimulationWithHardToCreateBacteria() { return isAnotherAnotherSimulationWithHardToCreateBacteria; }
     public static boolean getIsDeadNodeAvailable() { return isDeadNodeAvailable; }
     public static double getMaxInitialNodesSurvivability() { return maxInitialNodesSurvivability; }
     public static double getMinInitialNodesSurvivability() { return minInitialNodesSurvivability; }

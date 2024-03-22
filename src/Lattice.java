@@ -105,7 +105,10 @@ public class Lattice {
     }
 
     public void trySetNodeOnPosition(int x, int y, double survivability) {
-        if (Math.random() > survivability) {
+        double antibioticConcentration = getAntibioticConcentrationOnPosition(x, y);
+        double concentrationResistance = Math.exp(-(1 - survivability) * antibioticConcentration);
+
+        if (Math.random() > survivability * concentrationResistance) {
             return;
         }
         lattice[x][y] = new Node(x, y, survivability);
