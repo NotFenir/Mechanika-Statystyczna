@@ -4,11 +4,11 @@ import java.awt.*;
 public class SimulationPanel extends JPanel {
     private boolean isSimulationPaused = true;
     private Lattice lattice;
-    private Simulation simulation;
+    private AnotherSimulationVersion simulation;
     private int test = 0;
 
     public SimulationPanel() {
-        simulation = new Simulation();
+        simulation = new AnotherSimulationVersion();
         lattice = simulation.getLattice();
     }
 

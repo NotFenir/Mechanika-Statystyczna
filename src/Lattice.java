@@ -104,7 +104,10 @@ public class Lattice {
         lattice[x][y] = null;
     }
 
-    public void setNodeOnPosition(int x, int y, double survivability) {
+    public void trySetNodeOnPosition(int x, int y, double survivability) {
+        if (Math.random() > survivability) {
+            return;
+        }
         lattice[x][y] = new Node(x, y, survivability);
     }
 
