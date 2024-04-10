@@ -1,11 +1,11 @@
 import java.util.List;
 
-public class AnotherSimulationVersion {
+public class NonDeadSimulation implements Simulation {
     private final Lattice lattice;
     private boolean isStepDone = false;
     private int iterateIdx = 0;
 
-    public AnotherSimulationVersion() {
+    public NonDeadSimulation() {
         lattice = new Lattice(Constants.getLatticeSize());
         lattice.putInitialNodesOnLeftAndRightSides();
     }

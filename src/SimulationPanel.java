@@ -4,11 +4,15 @@ import java.awt.*;
 public class SimulationPanel extends JPanel {
     private boolean isSimulationPaused = true;
     private Lattice lattice;
-    private AnotherSimulationVersion simulation;
+    private Simulation simulation;
     private int test = 0;
 
     public SimulationPanel() {
-        simulation = new AnotherSimulationVersion();
+        if (Constants.getIsNonDeadSimulationActive()) {
+            simulation = new NonDeadSimulation();
+        } else {
+            simulation = new SimulationWithDead();
+        }
         lattice = simulation.getLattice();
     }
 
