@@ -2,7 +2,7 @@ public class Constants {
     private static final int latticeSize = 300;
     private static final int windowWidth = 400;
     private static final int windowHeight = 400;
-    private static final boolean isNonDeadSimulationActive = true;
+    private static final boolean isNonDeadSimulationActive = false;
 
     private static final boolean isRandomInitialNodesSurvivability = true;
     private static final double maxInitialNodesSurvivability = 0.8;
@@ -22,7 +22,7 @@ public class Constants {
     private static final double minimumOffsetOfMutability = 0;
 
     // --------- Dead ----------
-    private static final boolean isDeadNodeAvailable = false;
+    private static final boolean isDeadNodeAvailable = true;
 
     // --------- Getters ----------
     public static boolean getIsNonDeadSimulationActive() { return isNonDeadSimulationActive; }

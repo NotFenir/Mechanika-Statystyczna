@@ -45,7 +45,7 @@ public class NonDeadSimulation implements Simulation {
 
     private double getNewNodeSurvivability(Node adjacentNode) {
         double newNodeSurvivability;
-        newNodeSurvivability= getAdjacentNodeSurvivability(adjacentNode);
+        newNodeSurvivability = getAdjacentNodeSurvivability(adjacentNode);
 
         return newNodeSurvivability;
     }
